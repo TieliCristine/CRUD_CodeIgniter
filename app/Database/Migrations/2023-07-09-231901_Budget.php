@@ -12,30 +12,38 @@ class Budget extends Migration
             'id' => [
                 'type' => 'BIGINT',
                 'unsigned' => true,
-                'auto_increment' => true,
+                'auto_increment' => true
             ],
             'quantity' => [
                 'type' => 'INT',
-                'null' => 'false'
+                'unsigned' => true,
+                'null' => false
             ],
             'finalPrice' => [
                 'type' => 'INT',
-                'null' => 'false'
+                'null' => false
             ],
             'customer' => [
-                // foreign key
+                'type' => 'BIGINT',
+                'null' => false
             ],
             'supplier' => [
-                // foreign key
+                'type' => 'BIGINT',
+                'null' => false
             ],
             'product' => [
-                // foreign key
+                'type' => 'BIGINT',
+                'null' => false
             ],
             'status' => [
-                // foreign key
-            ],
+                'type' => "ENUM('PENDING', 'PROGRESSING', 'AUTHORIZED', 'CONCLUDED', 'DELIVERED')",
+                'default' => 'PENDING'
+            ]
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('customer', 'customers', 'id', 'NO ACTION', 'NO ACTION');
+        $this->forge->addForeignKey('supplier', 'suppliers', 'id', 'NO ACTION', 'NO ACTION');
+        $this->forge->addForeignKey('product', 'products', 'id', 'NO ACTION', 'NO ACTION');
         $this->forge->createTable('budgets');
     }
 

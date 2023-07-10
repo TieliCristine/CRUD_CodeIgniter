@@ -12,21 +12,21 @@ class Product extends Migration
             'id' => [
                 'type' => 'BIGINT',
                 'unsigned' => true,
-                'auto_increment' => true,
+                'auto_increment' => true
             ],
             'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
-                'null' => 'false'
+                'null' => false
             ],
             'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => 225,
-                'null' => 'false'
+                'null' => false
             ],
             'price' => [
                 'type' => 'INT',
-                'null' => 'false'
+                'null' => false
             ],
         ]);
         $this->forge->addKey('id', true);

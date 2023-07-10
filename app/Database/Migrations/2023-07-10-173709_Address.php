@@ -12,35 +12,43 @@ class Address extends Migration
             'id' => [
                 'type' => 'BIGINT',
                 'unsigned' => true,
-                'auto_increment' => true,
+                'auto_increment' => true
             ],
-            'zip_code' => [
+            'zipCode' => [
                 'type' => 'VARCHAR',
-                'null' => 'false'
+                'constraint' => 8,
+                'null' => false
             ],
             'street' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
-                'null' => 'false'
+                'constraint' => 150,
+                'null' => false
             ],
             'number' => [
                 'type' => 'VARCHAR',
+                'constraint' => 5,
+                'null' => false
             ],
             'supplemental' => [
                 'type' => 'VARCHAR',
+                'constraint' => 50,
+                'null' => false
             ],
             'district' => [
                 'type' => 'VARCHAR',
-                'null' => 'false'
+                'constraint' => 100,
+                'null' => false
             ],
             'city' => [
                 'type' => 'VARCHAR',
-                'null' => 'false'
+                'constraint' => 100,
+                'null' => false
             ],
             'state' => [
                 'type' => 'VARCHAR',
-                'null' => 'false'
-            ]
+                'constraint' => 20,
+                'null' => false
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('addresses');

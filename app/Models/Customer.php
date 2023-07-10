@@ -13,7 +13,7 @@ class Customer extends Model
         'name',
         'birthdate',
         'address',
-        'personal_data'
+        'personalData'
     ];
 
     // Dates

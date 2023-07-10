@@ -12,26 +12,30 @@ class Supplier extends Migration
             'id' => [
                 'type' => 'BIGINT',
                 'unsigned' => true,
-                'auto_increment' => true,
+                'auto_increment' => true
             ],
-            'corporative_name' => [
+            'corporativeName' => [
                 'type' => 'VARCHAR',
                 'constraint' => 225,
-                'null' => 'false'
+                'null' => false
             ],
-            'sales_representative' => [
+            'salesRepresentative' => [
                 'type' => 'VARCHAR',
                 'constraint' => 225,
-                'null' => 'false'
+                'null' => false
             ],
             'address' => [
-                // foreign key
+                'type' => 'BIGINT',
+                'null' => false
             ],
-            'personal_data' => [
-                // foreign key
-            ],
+            'personalData' => [
+                'type' => 'BIGINT',
+                'null' => false
+            ]
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('address', 'addresses', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('personalData', 'personalData', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('suppliers');
     }
 

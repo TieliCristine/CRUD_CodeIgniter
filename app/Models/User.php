@@ -15,8 +15,8 @@ class User extends Model
         'cpf',
         'name',
         'birthdate',
-        'job_position',
-        'access_lvl'
+        'jobPosition',
+        'accessLvl'
     ];
 
     // Dates
@@ -25,4 +25,20 @@ class User extends Model
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
     protected $deletedField = 'deleted_at';
+
+    // Status Constants
+    const ACCESS_LOW = 'LOW';
+    const ACCESS_MEDIUM = 'MEDIUM';
+    const ACCESS_HIGH = 'HIGH';
+    const ACCESS_ADMIN = 'ADMIN';
+
+    public function getAccessOptions(): array
+    {
+        return [
+            self::ACCESS_LOW => 'Low',
+            self::ACCESS_MEDIUM => 'Medium',
+            self::ACCESS_HIGH => 'High',
+            self::ACCESS_ADMIN => 'Admin',
+        ];
+    }
 }

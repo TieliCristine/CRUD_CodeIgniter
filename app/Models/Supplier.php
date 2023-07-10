@@ -10,10 +10,10 @@ class Supplier extends Model
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields = [
-        'corporative_name',
-        'sales_representative',
+        'corporativeName',
+        'salesRepresentative',
         'address',
-        'personal_data'
+        'personalData'
     ];
 
     // Dates

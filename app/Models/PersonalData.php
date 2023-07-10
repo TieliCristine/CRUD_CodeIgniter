@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class PersonalData extends Model
 {
-    protected $table = 'personal_data';
+    protected $table = 'personalData';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields = [

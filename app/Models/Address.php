@@ -10,7 +10,7 @@ class Address extends Model
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields = [
-        'zip_code',
+        'zipCode',
         'street',
         'number',
         'supplemental',
