@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class Supplier extends Model
 {
-    protected $table            = 'suppliers';
-    protected $primaryKey       = 'id';
+    protected $table = 'suppliers';
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = [
+    protected $allowedFields = [
         'corporative_name',
         'sales_representative',
         'address',
@@ -18,8 +18,8 @@ class Supplier extends Model
 
     // Dates
     protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $dateFormat = 'datetime';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
+    protected $deletedField = 'deleted_at';
 }

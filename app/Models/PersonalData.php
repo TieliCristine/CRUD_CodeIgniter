@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class PersonalData extends Model
 {
-    protected $table            = 'personal_datas';
-    protected $primaryKey       = 'id';
+    protected $table = 'personal_data';
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = [
+    protected $allowedFields = [
         'cpf',
         'cnpj',
         'phone',
@@ -18,8 +18,8 @@ class PersonalData extends Model
 
     // Dates
     protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $dateFormat = 'datetime';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
+    protected $deletedField = 'deleted_at';
 }

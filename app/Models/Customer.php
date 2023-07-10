@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class Customer extends Model
 {
-    protected $table            = 'customers';
-    protected $primaryKey       = 'id';
+    protected $table = 'customers';
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = [
+    protected $allowedFields = [
         'name',
         'birthdate',
         'address',
@@ -18,8 +18,8 @@ class Customer extends Model
 
     // Dates
     protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    protected $dateFormat = 'datetime';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
+    protected $deletedField = 'deleted_at';
 }

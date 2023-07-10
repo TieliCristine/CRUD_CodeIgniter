@@ -14,33 +14,20 @@ class Product extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'zip_code' => [
-                'type' => 'VARCHAR',
-                'null' => 'false'
-            ],
-            'street' => [
+            'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'null' => 'false'
             ],
-            'number' => [
+            'description' => [
                 'type' => 'VARCHAR',
-            ],
-            'supplemental' => [
-                'type' => 'VARCHAR',
-            ],
-            'district' => [
-                'type' => 'VARCHAR',
+                'constraint' => 225,
                 'null' => 'false'
             ],
-            'city' => [
-                'type' => 'VARCHAR',
+            'price' => [
+                'type' => 'INT',
                 'null' => 'false'
             ],
-            'state' => [
-                'type' => 'VARCHAR',
-                'null' => 'false'
-            ]
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('products');
