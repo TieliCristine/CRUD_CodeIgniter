@@ -10,31 +10,33 @@ class Customer extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'BIGINT',
-                'unsigned' => true,
-                'auto_increment' => true
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'auto_increment'    => true
             ],
             'name' => [
-                'type' => 'VARCHAR',
-                'constraint' => 225,
-                'null' => false
+                'type'              => 'VARCHAR',
+                'constraint'        => 225,
+                'null'              => false
             ],
             'birthdate' => [
-                'type' => 'DATE',
-                'null' => false
+                'type'              => 'DATE',
+                'null'              => false
             ],
-            'address' => [
-                'type' => 'BIGINT',
-                'null' => false
+            'id_address' => [
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'null'              => false
             ],
-            'personalData' => [
-                'type' => 'BIGINT',
-                'null' => false
+            'id_personalData' => [
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'null'              => false
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('address', 'addresses', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('personalData', 'personalData', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_address', 'addresses', 'id', 'CASCADE', 'CASCADE', 'id_address_fk');
+        $this->forge->addForeignKey('id_personalData', 'personalData', 'id', 'CASCADE', 'CASCADE', 'id_personalData_fk');
         $this->forge->createTable('customers');
     }
 

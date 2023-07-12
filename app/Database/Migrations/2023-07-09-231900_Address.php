@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class User extends Migration
+class Address extends Migration
 {
     public function up()
     {
@@ -14,47 +14,48 @@ class User extends Migration
                 'unsigned'          => true,
                 'auto_increment'    => true
             ],
-            'email' => [
-                'type'              => 'VARCHAR',
-                'constraint'        => 225,
-                'unique'            => true,
+            'zipCode' => [
+                'type' => 'VARCHAR',
+                'constraint'        => 8,
                 'null'              => false
             ],
-            'password' => [
+            'street' => [
                 'type'              => 'VARCHAR',
-                'constraint'        => 100,
+                'constraint'        => 150,
                 'null'              => false
             ],
-            'cpf' => [
+            'number' => [
                 'type'              => 'VARCHAR',
-                'constraint'        => 112,
-                'unique'            => true,
+                'constraint'        => 5,
                 'null'              => false
             ],
-            'name' => [
-                'type'              => 'VARCHAR',
-                'constraint'        => 225,
-                'null'              => false
-            ],
-            'birthdate' => [
-                'type'              => 'DATE',
-            ],
-            'jobPosition' => [
+            'supplemental' => [
                 'type'              => 'VARCHAR',
                 'constraint'        => 50,
                 'null'              => false
             ],
-            'accessLvl' => [
-                'type'              => "ENUM('LOW', 'MEDIUM', 'HIGH', 'ADMIN')",
-                'default'           => 'LOW'
-            ]
+            'district' => [
+                'type'              => 'VARCHAR',
+                'constraint'        => 100,
+                'null'              => false
+            ],
+            'city' => [
+                'type'              => 'VARCHAR',
+                'constraint'        => 100,
+                'null'              => false
+            ],
+            'state' => [
+                'type'              => 'VARCHAR',
+                'constraint'        => 20,
+                'null'              => false
+            ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('users');
+        $this->forge->createTable('addresses');
     }
 
     public function down()
     {
-        $this->forge->dropTable('users');
+        $this->forge->dropTable('addresses');
     }
 }

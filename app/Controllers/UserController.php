@@ -16,12 +16,12 @@ class UserController extends ResourceController
      */
     public function index()
     {
-        $data = [
-            'message' => 'success',
-            "data_user" => $this->model->findAll()
+        $users = [
+            'message'   => 'successo',
+            "user_list" => $this->model->findAll()
         ];
-        var_dump($data);
-        return $this->respond($data, 200);
+        var_dump($users);
+        return $this->respond($users, 200);
     }
 
     /**
@@ -41,7 +41,7 @@ class UserController extends ResourceController
      */
     public function new()
     {
-        //
+
     }
 
     /**
@@ -51,7 +51,8 @@ class UserController extends ResourceController
      */
     public function create()
     {
-        //
+        $user = $this->request->getBody();
+        var_dump($user);
     }
 
     /**

@@ -34,6 +34,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 $routes->get('user', 'UserController::index');
+$routes->post('user', 'UserController::index');
 
 /*
  * --------------------------------------------------------------------

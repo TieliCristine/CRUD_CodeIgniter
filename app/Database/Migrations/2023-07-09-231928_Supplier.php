@@ -10,32 +10,34 @@ class Supplier extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'BIGINT',
-                'unsigned' => true,
-                'auto_increment' => true
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'auto_increment'    => true
             ],
             'corporativeName' => [
-                'type' => 'VARCHAR',
-                'constraint' => 225,
-                'null' => false
+                'type'              => 'VARCHAR',
+                'constraint'        => 225,
+                'null'              => false
             ],
             'salesRepresentative' => [
-                'type' => 'VARCHAR',
-                'constraint' => 225,
-                'null' => false
+                'type'              => 'VARCHAR',
+                'constraint'        => 225,
+                'null'              => false
             ],
-            'address' => [
-                'type' => 'BIGINT',
-                'null' => false
+            'id_address_supplier' => [
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'null'              => false
             ],
-            'personalData' => [
-                'type' => 'BIGINT',
-                'null' => false
+            'id_personalData_supplier' => [
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'null'              => false
             ]
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('address', 'addresses', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('personalData', 'personalData', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_address_supplier', 'addresses', 'id', 'CASCADE', 'CASCADE', 'id_address_supplier_fk');
+        $this->forge->addForeignKey('id_personalData_supplier', 'personalData', 'id', 'CASCADE', 'CASCADE', 'id_personalData_supplier_fk');
         $this->forge->createTable('suppliers');
     }
 

@@ -12,8 +12,8 @@ class Supplier extends Model
     protected $allowedFields = [
         'corporativeName',
         'salesRepresentative',
-        'address',
-        'personalData'
+        'id_address',
+        'id_personalData'
     ];
 
     // Dates

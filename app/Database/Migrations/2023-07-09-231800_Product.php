@@ -10,23 +10,23 @@ class Product extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'BIGINT',
-                'unsigned' => true,
-                'auto_increment' => true
+                'type'              => 'BIGINT',
+                'unsigned'          => true,
+                'auto_increment'    => true
             ],
             'name' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
-                'null' => false
+                'constraint'        => 100,
+                'null'              => false
             ],
             'description' => [
-                'type' => 'VARCHAR',
-                'constraint' => 225,
-                'null' => false
+                'type'              => 'VARCHAR',
+                'constraint'        => 225,
+                'null'              => false
             ],
             'price' => [
-                'type' => 'INT',
-                'null' => false
+                'type'              => 'INT',
+                'null'              => false
             ],
         ]);
         $this->forge->addKey('id', true);
