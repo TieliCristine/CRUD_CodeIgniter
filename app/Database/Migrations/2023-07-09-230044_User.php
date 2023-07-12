@@ -39,12 +39,12 @@ class User extends Migration
             'birthdate' => [
                 'type' => 'DATE',
             ],
-            'job_position' => [
+            'jobPosition' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
                 'null' => false
             ],
-            'access_lvl' => [
+            'accessLvl' => [
                 'type' => "ENUM('LOW', 'MEDIUM', 'HIGH', 'ADMIN')",
                 'default' => 'LOW'
             ]
